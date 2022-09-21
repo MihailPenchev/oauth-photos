@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "8962736a-3c8c-4f3d-902b-3ea2562a8a11",
+		"name": "Oauth Photos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16073425"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Status Check",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2WWx5Y1d0TUkzcndTRVhVR3EwcEtpVkJ4SjdGYjg1THpWYnRvWTBiczZVIn0.eyJleHAiOjE2NjM3NzIyOTcsImlhdCI6MTY2Mzc3MTk5NywiYXV0aF90aW1lIjoxNjYzNzcxNzcwLCJqdGkiOiI4YmMzNDk3OS00NzBlLTRlMDgtOThjZS1hNjcyMGNlOWRkZDUiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgxODAvcmVhbG1zL2FwcHNkZXZlbG9wZXJibG9nIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjA3YzJkYjc0LTA2YTUtNGYzMy1iOWVhLWZkODQ1M2UyNTE5YyIsInR5cCI6IkJlYXJlciIsImF6cCI6InBob3RvLWFwcC1jb2RlLWZsb3ctY2xpZW50Iiwic2Vzc2lvbl9zdGF0ZSI6ImJkY2EyNjNmLTgzNDYtNDQ5MC1iMzdhLTQ1MjY1N2Y1NDAwYiIsImFjciI6IjAiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hcHBzZGV2ZWxvcGVyYmxvZyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwic2lkIjoiYmRjYTI2M2YtODM0Ni00NDkwLWIzN2EtNDUyNjU3ZjU0MDBiIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJNaWhhaWwgUGVuY2hldiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1paGFpbC5wZW5jZXYiLCJnaXZlbl9uYW1lIjoiTWloYWlsIiwiZmFtaWx5X25hbWUiOiJQZW5jaGV2IiwiZW1haWwiOiJtaWhhaWwucGVuY2hldkBtdXNhbGEuY29tIn0.VtTmXqit08OIFcOUwHazvNSZRq1R8Gu16VM1ZvCWKCjnSwWvHVNEbeumMNK5IbzzwZhZfRnIu6hqOvFzwmGc86uEDSKp6W1n77Hv25ZghAVyd9jse6mZx2YPJzxyRD2huKSo65i4PTx6KVKQVtS6IHMuDa7qZRKn9fnunjaZ217HPGseXa5rc2fmen51Gx3qg3HERRH2x8A0-esaThcpfPB92l2BiTlqW4TKQK7-6vbGGvSy2oEFK1q7th3BSEKRGbrIRUE80bGo5w4fgvAcnHCL4ag_4K2hMz8kN3LjdEI38UbTJyhHSKTI5SONiufMtguqAt1gw2BGNH_HhuE4Cw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/status/check",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"status",
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Keycloak",
+			"item": [
+				{
+					"name": "PKCE Authorization Code Grant",
+					"item": [
+						{
+							"name": "Request Login",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/auth?response_type=code&state=sstatestring&redirect_uri=http://localhost:8081/callback&scope=openid profile&client_id=photo-app-code-flow-client&code_challenge=q1q_pVsXDrZ4OqXZKIeIi63uLjPf7l6wd3DuVbZ-SLI&code_challenge_method=S256",
+									"host": [
+										"localhost"
+									],
+									"port": "8180",
+									"path": [
+										"realms",
+										"appsdeveloperblog",
+										"protocol",
+										"openid-connect",
+										"auth"
+									],
+									"query": [
+										{
+											"key": "response_type",
+											"value": "code"
+										},
+										{
+											"key": "state",
+											"value": "sstatestring"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "http://localhost:8081/callback"
+										},
+										{
+											"key": "scope",
+											"value": "openid profile"
+										},
+										{
+											"key": "client_id",
+											"value": "photo-app-code-flow-client"
+										},
+										{
+											"key": "code_challenge",
+											"value": "q1q_pVsXDrZ4OqXZKIeIi63uLjPf7l6wd3DuVbZ-SLI"
+										},
+										{
+											"key": "code_challenge_method",
+											"value": "S256"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Access Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "authorization_code",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "764f855d-d8f6-4d3a-b9e4-a7850cc7eb14.bdca263f-8346-4490-b37a-452657f5400b.27bb21bc-84ab-4f95-ae0f-061c9d619246",
+											"type": "text"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "http://localhost:8081/callback",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "photo-app-code-flow-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+											"type": "text"
+										},
+										{
+											"key": "code_verifier",
+											"value": "thiscodeverifierstringisatleast43characters",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8180",
+									"path": [
+										"realms",
+										"appsdeveloperblog",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"item": [
+						{
+							"name": "Request Indefinite Refresh Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "photo-app-code-flow-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "offline_access profile",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjQ0OTRjOC1mYzNmLTQxMTEtODk1ZS03NzJmMmM4YTc3MWIifQ.eyJleHAiOjE2NjM3NzM3OTcsImlhdCI6MTY2Mzc3MTk5NywianRpIjoiNWNmNGIwNjUtMmNhZi00ZmZiLTkyNzgtNGE0OTA3ZWViNWQ3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9hcHBzZGV2ZWxvcGVyYmxvZyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvYXBwc2RldmVsb3BlcmJsb2ciLCJzdWIiOiIwN2MyZGI3NC0wNmE1LTRmMzMtYjllYS1mZDg0NTNlMjUxOWMiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoicGhvdG8tYXBwLWNvZGUtZmxvdy1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiYmRjYTI2M2YtODM0Ni00NDkwLWIzN2EtNDUyNjU3ZjU0MDBiIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZCI6ImJkY2EyNjNmLTgzNDYtNDQ5MC1iMzdhLTQ1MjY1N2Y1NDAwYiJ9.1qy2-BnulG2UP3_k-yu-5-LSfnm0DgXIb2KXLl0iVDw",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8180",
+									"path": [
+										"realms",
+										"appsdeveloperblog",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Expiring Refresh Token Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "photo-app-code-flow-client",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "profile",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJmMjQ0OTRjOC1mYzNmLTQxMTEtODk1ZS03NzJmMmM4YTc3MWIifQ.eyJleHAiOjE2NjM3NzQxMjEsImlhdCI6MTY2Mzc3MjMyMSwianRpIjoiN2E1ZWJhMjQtZmRmOC00ZWM0LWE4NjAtNmMwZjM2YTlhZDUyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgwL3JlYWxtcy9hcHBzZGV2ZWxvcGVyYmxvZyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MC9yZWFsbXMvYXBwc2RldmVsb3BlcmJsb2ciLCJzdWIiOiIwN2MyZGI3NC0wNmE1LTRmMzMtYjllYS1mZDg0NTNlMjUxOWMiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoicGhvdG8tYXBwLWNvZGUtZmxvdy1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiYmRjYTI2M2YtODM0Ni00NDkwLWIzN2EtNDUyNjU3ZjU0MDBiIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInNpZCI6ImJkY2EyNjNmLTgzNDYtNDQ5MC1iMzdhLTQ1MjY1N2Y1NDAwYiJ9.dw7cnnbTNgpNzYy25_4_u1WFyfRXvvRRRctlWtP74hU",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8180",
+									"path": [
+										"realms",
+										"appsdeveloperblog",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Other grants",
+					"item": [
+						{
+							"name": "Authorization Code Grant",
+							"item": [
+								{
+									"name": "Request Login",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/auth?response_type=code&state=sstatestring&redirect_uri=http://localhost:8081/callback&scope=openid profile&client_id=photo-app-code-flow-client",
+											"host": [
+												"localhost"
+											],
+											"port": "8180",
+											"path": [
+												"realms",
+												"appsdeveloperblog",
+												"protocol",
+												"openid-connect",
+												"auth"
+											],
+											"query": [
+												{
+													"key": "response_type",
+													"value": "code"
+												},
+												{
+													"key": "state",
+													"value": "sstatestring"
+												},
+												{
+													"key": "redirect_uri",
+													"value": "http://localhost:8081/callback"
+												},
+												{
+													"key": "scope",
+													"value": "openid profile"
+												},
+												{
+													"key": "client_id",
+													"value": "photo-app-code-flow-client"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Request Access Token",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "authorization_code",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "<code>",
+													"type": "text"
+												},
+												{
+													"key": "redirect_uri",
+													"value": "http://localhost:8081/callback",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "photo-app-code-flow-client",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8180",
+											"path": [
+												"realms",
+												"appsdeveloperblog",
+												"protocol",
+												"openid-connect",
+												"token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Client Credentials Grant",
+							"item": [
+								{
+									"name": "Request Access Token",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "photo-app-code-flow-client",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "email",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8180",
+											"path": [
+												"realms",
+												"appsdeveloperblog",
+												"protocol",
+												"openid-connect",
+												"token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Password Grant",
+							"item": [
+								{
+									"name": "Request Access Token",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "password",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "photo-app-code-flow-client",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "QNpBYCiYKJHWpb7bJfUnf6r8mSbnpqFt",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "profile",
+													"type": "text"
+												},
+												{
+													"key": "username",
+													"value": "mihail.penchev@musala.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "pass",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8180/realms/appsdeveloperblog/protocol/openid-connect/token",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8180",
+											"path": [
+												"realms",
+												"appsdeveloperblog",
+												"protocol",
+												"openid-connect",
+												"token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
