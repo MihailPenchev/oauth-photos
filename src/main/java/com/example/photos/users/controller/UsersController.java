@@ -1,7 +1,9 @@
 package com.example.photos.users.controller;
 
 import com.example.photos.users.dto.UserRest;
-import org.springframework.security.access.annotation.Secured;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+//import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/users")
 public class UsersController {
+    @Autowired
+    private Environment environment;
+
     @GetMapping("/status/check")
     public String status() {
-        return "Working...";
+        return "Working on port:" + environment.getProperty("local.server.port");
     }
 
     @PreAuthorize("hasAuthority('ROLE_developer') or #id == #jwt.subject")
